@@ -15,7 +15,7 @@ This is a Django-based CRUD (Create, Read, Update, Delete) project that demonstr
 - Add new student records
 - View a list of all students
 - Edit student details
-- Delete student records with a confirmation prompt
+- Delete student records
 
 ## Installation
 

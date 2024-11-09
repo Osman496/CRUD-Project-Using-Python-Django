@@ -1,0 +1,15 @@
+{% extends "APP1/base.html" %}
+{% block content %}
+<div class="row">
+   <!-- This part of the code snippet is responsible for displaying a form to add student data on the web
+   page. -->
+    <div class="col-sm-5 offset-2">
+            <h4 class='text-center alert alert-primary'>Update Student Data</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" class='btn btn-success' value="submit">
+                <a href="{% url 'add_show' %}" class='btn btn-info'>Back to Home</a>
+            </form>
+    </div>
+{% endblock content %}

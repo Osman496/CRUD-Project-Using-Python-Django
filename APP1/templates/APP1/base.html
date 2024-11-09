@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - Muhammad Usman</title>
+    <link rel="stylesheet" href="{% static 'APP1/CSS/bootstrap.css' %}">
+    <style>
+        body{
+            background-color: #E2F1E7;
+        }
+    </style>
+</head>
+<body>
+
+<div class='container mt-5'>
+    <h2 class='text-center alert alert-danger'>
+        Function based view modelform CRUD project
+    </h2>
+    {% block content %}{% endblock content %} 
+</div>
+<script src="{% static 'APP1/js/jquerry.js' %}"></script>
+<script src="{% static 'APP1/js/popper.js' %}"></script>
+<script src="{% static 'APP1/js/bootstrap.js' %}"></script>
+</body>
+</html>

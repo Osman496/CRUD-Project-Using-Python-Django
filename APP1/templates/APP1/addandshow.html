@@ -1,0 +1,54 @@
+<!-- This code snippet is a Django template used to render a web page for managing student data. Let me
+break it down for you: -->
+{% extends "APP1/base.html" %}
+{% block content %}
+<div class="row">
+   <!-- This part of the code snippet is responsible for displaying a form to add student data on the web
+   page. -->
+    <div class="col-sm-4">
+            <h4 class='text-center alert alert-primary'>Add Student Data</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" class='btn btn-success' value="submit">
+            </form>
+    </div>
+    <!-- This part of the code snippet is responsible for displaying a table that shows the student data
+    on the web page. -->
+    <div class="col-sm-7 offset-1">
+        {% csrf_token %}
+        <h4 class='text-center alert alert-primary'>Show Students Data</h4>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope='col'>Edit/Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for st in stuData %}
+                    <tr>
+                        <th scope="row">{{st.id}}</th>
+                        <td>{{st.name}}</td>
+                        <td>{{st.age}}</td>
+                        <td>{{st.email}}</td>
+                        <td>{{st.password}}</td>
+                        <td>
+                            <a href="{% url 'Updation' st.id %}" class='btn btn-warning btn-sm'>Edit</a>
+
+                            <form action="{% url 'Deletion' st.id %}" class="d-inline"      method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="Delete" class='btn btn-danger btn-sm'>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</div>
+{% endblock content %}

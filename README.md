@@ -22,7 +22,7 @@ This is a Django-based CRUD (Create, Read, Update, Delete) project that demonstr
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/yourusername/your-repository-name.git
+    git clone git@github.com:Osman496/CRUD-Project-Using-Python-Django.git
     cd your-repository-name
     ```
 
